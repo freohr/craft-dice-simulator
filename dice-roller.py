@@ -1,7 +1,16 @@
+import argparse
 import random
 
-total = 1000
-threshold = 50
+parser = argparse.ArgumentParser(
+    description="Script permettant de simuler un ensemble de jet de d100 pour atteindre un score total")
+
+parser.add_argument("total", type=int, help="Total a atteindre")
+parser.add_argument("seuil", type=int, help="Seuil de reussite du jet (jet reussi si inferieur au seuil)")
+
+args = parser.parse_args()
+
+total = args.total
+threshold = args.seuil
 current = 0
 count = 0
 rolls = []
